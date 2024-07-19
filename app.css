@@ -32,6 +32,7 @@ body {
 	opacity: 0;
 	animation: slideRight 1s ease forwards;
 	animation-delay: 0.4s;
+	cursor: pointer;
 }
 .nav-toggle {
 	display: none;
@@ -89,7 +90,7 @@ body {
 	.nav-toggle {
 		display: block;
 		font-size: 2rem;
-		color: hsl(205, 100%, 96%);
+		color: rgb(253, 239, 239);
 		background: transparent;
 		border-color: transparent;
 		cursor: pointer;
@@ -98,7 +99,7 @@ body {
 		animation-delay: 0.4s;
 	}
 	.nav-toggle:hover {
-		color: hsl(205, 84%, 93%);
+		color: #afacacd7;
 		transform: rotate(90deg);
 	}
 	.navbar {
@@ -171,13 +172,10 @@ body {
 	display: inline-flex;
 	justify-content: center;
 	align-items: center;
-	width: 40px;
-	height: 40px;
+	padding: 3px 5px;
 	background: transparent;
 	border: 2px solid #0ef;
 	border-radius: 50%;
-	font-size: 20px;
-	color: #0ef;
 	text-decoration: none;
 	margin: 30px 15px 30px 0;
 	cursor: pointer;
@@ -185,9 +183,15 @@ body {
 	animation: slideLeft 1s ease forwards;
 	animation-delay: calc(0.2s * var(--i));
 }
+.social-media a img {
+	width: 26px;
+	height: 26px;
+	filter: invert(82%) sepia(30%) saturate(7438%) hue-rotate(140deg)
+		brightness(108%) contrast(105%);
+}
 .social-media a:hover {
 	background: #0ef;
-	color: #1f242d;
+	fill: #eee;
 	box-shadow: 0 0 20px #0ef;
 }
 .btn {
@@ -250,9 +254,7 @@ body {
 	.home-img img {
 		max-width: 300px;
 	}
-	.social-media a {
-		width: 2em;
-		height: 2em;
+	.social-media a img {
 		margin: 15px 5px 15px 0;
 	}
 }
