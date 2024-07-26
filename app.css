@@ -113,7 +113,7 @@ body {
 		animation-delay: 0.4s;
 	}
 	.show-links {
-		height: 12rem;
+		height: 12.5rem;
 	}
 	.home {
 		flex-flow: column-reverse nowrap;
@@ -172,7 +172,8 @@ body {
 	display: inline-flex;
 	justify-content: center;
 	align-items: center;
-	padding: 3px 5px;
+	width: 36px;
+	height: 36px;
 	background: transparent;
 	border: 2px solid #0ef;
 	border-radius: 50%;
@@ -210,38 +211,6 @@ body {
 	animation-delay: 2s;
 }
 @media (max-width: 500px) {
-	.active-h3,
-	.active-h3-span,
-	.active-h1,
-	.active-p,
-	.active-a,
-	.active-btn {
-		opacity: 0;
-	}
-	.active-h3 {
-		animation: slideBottom 1s ease forwards;
-		animation-delay: 5.5s;
-	}
-	.active-h3-span {
-		animation: slideTop 1s ease forwards;
-		animation-delay: 5.7s;
-	}
-	.active-h1 {
-		animation: slideRight 1s ease forwards;
-		animation-delay: 6s;
-	}
-	.active-p {
-		animation: slideLeft 1s ease forwards;
-		animation-delay: 5.6s;
-	}
-	.active-a {
-		animation: slideLeft 1s ease forwards;
-		animation-delay: calc(5.2s * var(--i));
-	}
-	.active-btn {
-		animation: slideTop 1s ease forwards;
-		animation-delay: 7s;
-	}
 	.home-content h3 {
 		font-size: 24px;
 	}
