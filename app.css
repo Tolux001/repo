@@ -164,14 +164,18 @@ body {
 	animation-delay: 0.3s;
 }
 .home-img img {
-	max-width: 450px;
+	max-width: 400px;
+	height: auto;
 	border: 2px solid #eee;
 	border-radius: 12px;
 	/* filter: drop-shadow(0 3px 15px #007bfa); */
-	/* box-shadow: 0 5px 10px rgba(255, 255, 255, 1); */
+	box-shadow: 0 5px 10px rgba(255, 255, 255, 1);
 	opacity: 0;
 	animation: zoomIn 1s ease forwards, floatImage 4s ease-in-out infinite;
 	animation-delay: 0.5s, 0.5s;
+}
+.home-img_one {
+	display: none;
 }
 .home-img img:hover {
 	filter: drop-shadow(0 1px 5px rgba(255, 255, 255, 1));
@@ -236,8 +240,15 @@ body {
 		text-align: justify;
 	}
 	.home-img img {
-		max-width: 200px;
+		max-width: 300px;
+		height: auto;
 		border-radius: 50%;
+	}
+	.home-img_one {
+		display: block;
+	}
+	.home-img_two {
+		display: none;
 	}
 	.social-media a img {
 		margin: 15px 2px 15px 0;
