@@ -11,7 +11,7 @@ let items = [
 		id: 14,
 		img: "../images/macropay.webp",
 		name: "MACROPAY",
-		anchor: `https://events.mmsportsfoundation.org/`,
+		anchor: `https://apps.apple.com/ng/app/macropay/id6752791529`,
 		span: "Flutter + Dart",
 		description: `A mobile application that allows users to make seamless payments, transfer funds, and manage their finances on the go. It offers a secure and user-friendly interface for convenient financial transactions.`,
 	},
