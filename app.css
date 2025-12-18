@@ -163,6 +163,11 @@ body {
 	animation: slideLeft 1s ease forwards;
 	animation-delay: 0.3s;
 }
+p.par {
+	margin: 20px 0;
+	line-height: 150%;
+	font-size: 1em;
+}
 .home-img img {
 	max-width: 400px;
 	height: auto;
