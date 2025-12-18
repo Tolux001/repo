@@ -8,6 +8,14 @@ let items = [
 		description: `A dynamic web application for registration, showcasing and presenting of national track and field events in Nigeria. It showcases athletes, results, galleries, and inspiring stories. Engaging schools and communities through modern, user‑friendly design.`,
 	},
 	{
+		id: 14,
+		img: "../images/macropay.webp",
+		name: "MACROPAY",
+		anchor: `https://events.mmsportsfoundation.org/`,
+		span: "Flutter + Dart",
+		description: `A mobile application that allows users to make seamless payments, transfer funds, and manage their finances on the go. It offers a secure and user-friendly interface for convenient financial transactions.`,
+	},
+	{
 		id: 11,
 		img: "../images/glam.png",
 		name: "Glamistry By Zihanny",
