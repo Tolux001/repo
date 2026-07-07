@@ -281,8 +281,7 @@ const certificationContainer = document.querySelector(
 const skillsContainer = document.querySelector("#skills-container");
 
 const projectItemFunction = (projects) => {
-	let projectList = projects.map((item) => {
-		//
+	const cardHTML = projects.map((item, index) => {
 		const technologies = item.span.split(" + ");
 		const styledTechnologies = technologies
 			.map((tech) => {
@@ -291,7 +290,7 @@ const projectItemFunction = (projects) => {
 			.join("");
 
 		return `
-		<div class="project--card--container">
+		<div class="project--card--container" data-index="${index}" ${index === 0 ? 'style="z-index: 10;"' : ""}>
 			<img src="${item.img}" alt="${item.name}" />
 			<div class="project--info">
 				<h2>${item.name}</h2>
@@ -309,8 +308,128 @@ const projectItemFunction = (projects) => {
 			</div>
 		</div>`;
 	});
-	projectList = projectList.join("");
-	projectContainer.innerHTML = projectList;
+
+	const indicatorHTML = `
+		<div class="swipe-indicator">
+			${projects.map((_, i) => `<div class="swipe-dot ${i === 0 ? "active" : ""}"></div>`).join("")}
+		</div>
+		<div class="swipe-hint left">←</div>
+		<div class="swipe-hint right">→</div>
+	`;
+
+	projectContainer.innerHTML = cardHTML.join("") + indicatorHTML;
+
+	// Initialize swipe functionality only on mobile
+	const isMobile = window.innerWidth <= 768;
+	if (isMobile) {
+		document.querySelector(".swipe-indicator").classList.add("visible");
+		document
+			.querySelectorAll(".swipe-hint")
+			.forEach((hint) => hint.classList.add("visible"));
+		initializeSwipeCards(projects.length);
+	}
+};
+
+const initializeSwipeCards = (totalCards) => {
+	let currentCardIndex = 0;
+	let isDragging = false;
+	let startX = 0;
+	let currentX = 0;
+
+	const updateCardPositions = () => {
+		const cards = document.querySelectorAll(".project--card--container");
+		const dots = document.querySelectorAll(".swipe-dot");
+
+		cards.forEach((card, index) => {
+			card.classList.remove("swipe-left", "swipe-right", "next-card");
+
+			if (index === currentCardIndex) {
+				card.style.zIndex = "10";
+				card.style.opacity = "1";
+			} else if (index === (currentCardIndex + 1) % totalCards) {
+				card.classList.add("next-card");
+				card.style.zIndex = "5";
+			} else {
+				card.style.zIndex = "0";
+				card.style.opacity = "0";
+				card.style.pointerEvents = "none";
+			}
+		});
+
+		dots.forEach((dot, index) => {
+			dot.classList.toggle("active", index === currentCardIndex);
+		});
+	};
+
+	const swipeCard = (direction) => {
+		const card = document.querySelector(
+			`.project--card--container[data-index="${currentCardIndex}"]`,
+		);
+
+		if (direction === "left") {
+			card.classList.add("swipe-left");
+		} else {
+			card.classList.add("swipe-right");
+		}
+
+		setTimeout(() => {
+			currentCardIndex = (currentCardIndex + 1) % totalCards;
+			updateCardPositions();
+		}, 500);
+	};
+
+	// Mouse events
+	projectContainer.addEventListener("mousedown", (e) => {
+		isDragging = true;
+		startX = e.clientX;
+		currentX = startX;
+	});
+
+	document.addEventListener("mousemove", (e) => {
+		if (!isDragging) return;
+		currentX = e.clientX;
+	});
+
+	document.addEventListener("mouseup", (e) => {
+		if (!isDragging) return;
+		isDragging = false;
+
+		const distance = currentX - startX;
+		if (Math.abs(distance) > 50) {
+			if (distance > 0) {
+				swipeCard("right");
+			} else {
+				swipeCard("left");
+			}
+		}
+	});
+
+	// Touch events
+	projectContainer.addEventListener("touchstart", (e) => {
+		startX = e.touches[0].clientX;
+		isDragging = true;
+	});
+
+	projectContainer.addEventListener("touchmove", (e) => {
+		if (!isDragging) return;
+		currentX = e.touches[0].clientX;
+	});
+
+	projectContainer.addEventListener("touchend", (e) => {
+		if (!isDragging) return;
+		isDragging = false;
+
+		const distance = currentX - startX;
+		if (Math.abs(distance) > 50) {
+			if (distance > 0) {
+				swipeCard("right");
+			} else {
+				swipeCard("left");
+			}
+		}
+	});
+
+	updateCardPositions();
 };
 
 const certificationItemFunction = (projects) => {

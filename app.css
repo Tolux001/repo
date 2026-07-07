@@ -348,14 +348,14 @@ p.par {
 
 .project--section {
 	display: grid;
-	padding: 2em 5%;
-	grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+	grid-template-columns: repeat(3, 1fr);
 	grid-gap: 2rem;
-	justify-items: center;
-	align-items: center;
+	padding: 2em 5%;
 	background: rgba(31, 36, 45, 0.8);
 	border-radius: 12px;
 	box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+	position: relative;
+	overflow: visible;
 }
 
 .project--card--container {
@@ -371,9 +371,46 @@ p.par {
 	background: rgba(255, 255, 255, 0.1);
 	box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
 	transition: 0.3s ease-in-out;
+	position: relative;
+	transform: none;
+	opacity: 1;
+	pointer-events: auto;
+	z-index: 1;
 }
+
+.project--card--container.swipe-left {
+	transform: translate(-150%, -50%) rotate(-20deg);
+	opacity: 0;
+	pointer-events: none;
+	transition:
+		transform 0.5s ease-out,
+		opacity 0.5s ease-out;
+	z-index: 0;
+}
+
+.project--card--container.swipe-right {
+	transform: translate(150%, -50%) rotate(20deg);
+	opacity: 0;
+	pointer-events: none;
+	transition:
+		transform 0.5s ease-out,
+		opacity 0.5s ease-out;
+	z-index: 0;
+}
+
+.project--card--container.next-card {
+	transform: scale(0.95);
+	opacity: 0.7;
+	z-index: 0;
+}
+
 .project--card--container:hover {
 	transform: scale(1.05);
+	box-shadow: 0 0 30px rgba(14, 239, 255, 0.3);
+}
+
+.project--card--container.dragging {
+	transition: none;
 }
 
 .project--card--container img {
@@ -503,6 +540,103 @@ footer a {
 	place-content: center;
 }
 
+.swipe-indicator {
+	position: absolute;
+	bottom: 20px;
+	left: 50%;
+	transform: translateX(-50%);
+	display: none;
+	gap: 10px;
+	z-index: 10;
+}
+
+.swipe-indicator.visible {
+	display: flex;
+}
+
+.swipe-dot {
+	width: 10px;
+	height: 10px;
+	border-radius: 50%;
+	background: rgba(14, 239, 255, 0.3);
+	transition: background 0.3s ease;
+}
+
+.swipe-dot.active {
+	background: #0ef;
+}
+
+.swipe-hint {
+	position: absolute;
+	top: 50%;
+	transform: translateY(-50%);
+	font-size: 14px;
+	color: rgba(14, 239, 255, 0.5);
+	pointer-events: none;
+	z-index: 5;
+	top: auto;
+	bottom: 40px;
+	display: none;
+}
+
+.swipe-hint.visible {
+	display: block;
+}
+
+.swipe-hint.left {
+	left: 20px;
+}
+
+.swipe-hint.right {
+	right: 20px;
+}
+
+@media (max-width: 768px) {
+	.project--section {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		padding: 2em 5%;
+		min-height: 500px;
+		background: rgba(31, 36, 45, 0.8);
+		border-radius: 12px;
+		box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+		position: relative;
+		overflow: hidden;
+	}
+
+	.project--card--container {
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%) scale(1);
+	}
+
+	.project--card--container.next-card {
+		transform: translate(-50%, -50%) scale(0.95);
+	}
+
+	.project--card--container:hover {
+		transform: translate(-50%, -50%) scale(1.05);
+	}
+
+	.swipe-indicator.visible {
+		display: flex;
+	}
+
+	.swipe-hint.visible {
+		display: block;
+	}
+}
+
+#vis-desktop {
+	display: none;
+}
+
+#vis-mobile {
+	display: none;
+}
+
 @media (max-width: 500px) {
 	footer {
 		flex-direction: column;
@@ -511,6 +645,16 @@ footer a {
 	.skills {
 		grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
 		grid-gap: 1rem;
+	}
+	.project--section {
+		min-height: 400px;
+		padding: 1.5em 5%;
+	}
+	#vis-desktop {
+		display: none;
+	}
+	#vis-mobile {
+		display: block;
 	}
 }
 .skill {
@@ -523,7 +667,6 @@ footer a {
 	gap: 1em;
 	width: 100px;
 	padding: 1.2em 0.7em;
-	/* box-shadow: 1px 1px 1px rgba(255, 255, 255, 1); */
 }
 
 .skill img {
