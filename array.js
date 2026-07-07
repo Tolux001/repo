@@ -1,6 +1,14 @@
 let items = [
 	{
 		id: 12,
+		img: "../images/shopNova.png",
+		name: "Shop Nova",
+		anchor: `https://shopnova.app`,
+		span: "Next.js + TypeScript + Tailwind CSS + Shadcn UI + MongoDb + Express.Js + NodeJs + HTTPS Fetch API ",
+		description: `A AI enabled application that allows for the creation of ecomerce stores with ease. It allows for the creation of products, categories, and orders. It also allows for the management of users and their roles. It also allows for the management of payments and shipping.`,
+	},
+	{
+		id: 12,
 		img: "../images/mmsports.png",
 		name: "MMSPORTS FOUNDATION",
 		anchor: `https://events.mmsportsfoundation.org/`,
@@ -9,7 +17,7 @@ let items = [
 	},
 	{
 		id: 14,
-		img: "../images/macropay.webp",
+		img: "../images/macropay.jpg",
 		name: "MACROPAY",
 		anchor: `https://apps.apple.com/ng/app/macropay/id6752791529`,
 		span: "Flutter + Dart",
@@ -268,7 +276,7 @@ let skillItem = [
 
 const projectContainer = document.querySelector("#project--section");
 const certificationContainer = document.querySelector(
-	"#certification--section"
+	"#certification--section",
 );
 const skillsContainer = document.querySelector("#skills-container");
 
