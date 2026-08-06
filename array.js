@@ -290,7 +290,7 @@ const projectItemFunction = (projects) => {
 			.join("");
 
 		return `
-		<div class="project--card--container" data-index="${index}" ${index === 0 ? 'style="z-index: 10;"' : ""}>
+		<div class="project--card--container" data-index="${index}" ${index === 0 ? 'style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); z-index: 11; background: rgba(14, 239, 255, 0.1); display: block; opacity: 1;"' : "opacity: 0; pointer-events: none;"}>
 			<img src="${item.img}" alt="${item.name}" />
 			<div class="project--info">
 				<h2>${item.name}</h2>
@@ -349,6 +349,7 @@ const initializeSwipeCards = (totalCards) => {
 			} else if (index === (currentCardIndex + 1) % totalCards) {
 				card.classList.add("next-card");
 				card.style.zIndex = "5";
+				card.style.opacity = "0";
 			} else {
 				card.style.zIndex = "0";
 				card.style.opacity = "0";

@@ -243,8 +243,11 @@ p.par {
 	}
 	p.par {
 		font-size: 20px;
-		line-height: 140%;
+		line-height: 100%;
+		font-family: Arial, Helvetica, sans-serif;
 		text-align: justify;
+		word-spacing: normal;
+		word-wrap: break-word;
 	}
 	.home-img img {
 		max-width: 300px;
