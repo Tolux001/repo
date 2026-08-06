@@ -1,6 +1,14 @@
 let items = [
 	{
-		id: 12,
+		id: 0,
+		img: "",
+		name: "",
+		anchor: ``,
+		span: "",
+		description: ``,
+	},
+	{
+		id: 13,
 		img: "../images/shopNova.png",
 		name: "Shop Nova",
 		anchor: `https://shopnova.app`,
@@ -375,7 +383,7 @@ const initializeSwipeCards = (totalCards) => {
 		setTimeout(() => {
 			currentCardIndex = (currentCardIndex + 1) % totalCards;
 			updateCardPositions();
-		}, 500);
+		}, 50);
 	};
 
 	// Mouse events

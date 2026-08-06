@@ -647,8 +647,8 @@ footer a {
 		grid-gap: 1rem;
 	}
 	.project--section {
-		min-height: 400px;
-		padding: 1.5em 5%;
+		min-height: 800px;
+		padding: 2em 5%;
 	}
 	#vis-desktop {
 		display: none;
