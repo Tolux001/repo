@@ -1,14 +1,6 @@
 let items = [
 	{
 		id: 0,
-		img: "",
-		name: "",
-		anchor: ``,
-		span: "",
-		description: ``,
-	},
-	{
-		id: 13,
 		img: "../images/shopNova.png",
 		name: "Shop Nova",
 		anchor: `https://shopnova.app`,
@@ -16,7 +8,7 @@ let items = [
 		description: `A AI enabled application that allows for the creation of ecomerce stores with ease. It allows for the creation of products, categories, and orders. It also allows for the management of users and their roles. It also allows for the management of payments and shipping.`,
 	},
 	{
-		id: 12,
+		id: 1,
 		img: "../images/mmsports.png",
 		name: "MMSPORTS FOUNDATION",
 		anchor: `https://events.mmsportsfoundation.org/`,
@@ -24,7 +16,7 @@ let items = [
 		description: `A dynamic web application for registration, showcasing and presenting of national track and field events in Nigeria. It showcases athletes, results, galleries, and inspiring stories. Engaging schools and communities through modern, user‑friendly design.`,
 	},
 	{
-		id: 14,
+		id: 2,
 		img: "../images/macropay.jpg",
 		name: "MACROPAY",
 		anchor: `https://apps.apple.com/ng/app/macropay/id6752791529`,
@@ -32,7 +24,7 @@ let items = [
 		description: `A mobile application that allows users to make seamless payments, transfer funds, and manage their finances on the go. It offers a secure and user-friendly interface for convenient financial transactions.`,
 	},
 	{
-		id: 11,
+		id: 3,
 		img: "../images/glam.png",
 		name: "Glamistry By Zihanny",
 		anchor: `https://glamistrybyzihanny.vercel.app/`,
@@ -40,7 +32,7 @@ let items = [
 		description: `An e-commerce web app for a make up business that allows the automation of purchase and sales. Which includes skin park recommendation for people and addition or subtraction of materials from a package.`,
 	},
 	{
-		id: 13,
+		id: 4,
 		img: "../images/futh.png",
 		name: "Federal Teaching Hospital Wukari",
 		anchor: `https://futhwukari.netlify.app/`,
@@ -48,7 +40,7 @@ let items = [
 		description: `A website for the Federal University Teaching Hospital, Wukari. Which serves to provide information about the hospital's services, facilities, and educational programs.`,
 	},
 	{
-		id: 1,
+		id: 5,
 		img: "../images/Furnistore.png",
 		name: "Furni Store",
 		anchor: `https://furni-store-theta.vercel.app/`,
@@ -56,7 +48,7 @@ let items = [
 		description: `An e-commerce furniture store that allows users to browse and purchase furniture items. It includes user authentication, product management, and payment integration.`,
 	},
 	{
-		id: 2,
+		id: 6,
 		img: "../images/evntauth.jpg",
 		name: "Event Auth",
 		anchor: `https://eventauth.vercel.app/`,
@@ -64,7 +56,7 @@ let items = [
 		description: `An event management system that allows users to create & register for events. It includes user biometric authentication for registering at events.`,
 	},
 	{
-		id: 3,
+		id: 7,
 		img: "../images/calmmind.jpg",
 		name: "Calm Mind",
 		anchor: `https://calm-mind-zeta.vercel.app/`,
@@ -72,7 +64,7 @@ let items = [
 		description: `A web app to help you check and keep track of your stress level, AI bot integration for communication.`,
 	},
 	{
-		id: 4,
+		id: 8,
 		img: "../images/swift.jpg",
 		name: "Swift Vote",
 		anchor: `https://swift-election-olaleyeag20s-projects.vercel.app/`,
@@ -80,7 +72,7 @@ let items = [
 		description: `School voting platform, flexible and rigid for any platform`,
 	},
 	{
-		id: 5,
+		id: 9,
 		img: "../images/dompro.jpg",
 		name: "DOM PROJECTS",
 		anchor: `https://toluxdomproject.netlify.app/`,
@@ -88,7 +80,7 @@ let items = [
 		description: `A landing that holds various DOM projects I have laid my hands on`,
 	},
 	{
-		id: 6,
+		id: 10,
 		img: "https://toluxdomproject.netlify.app/images/item-10.png",
 		name: "Chrome New Tab Page",
 		anchor: `https://tolux-new-tab-page.vercel.app/`,
@@ -96,7 +88,7 @@ let items = [
 		description: `A new tab page for browsers on start-up`,
 	},
 	{
-		id: 7,
+		id: 11,
 		img: "https://toluxdomproject.netlify.app/images/item-8.png",
 		name: "Drum Kit",
 		anchor: `https://tolux-drum-kit.netlify.app/`,
@@ -104,7 +96,7 @@ let items = [
 		description: `A web page where drum effect can be played by clicking or using the keyboard.`,
 	},
 	{
-		id: 8,
+		id: 12,
 		img: "../images/prettycash.jpg",
 		name: "Petty Cash",
 		anchor: `https://pettycash-dummy.netlify.app/`,
@@ -112,7 +104,7 @@ let items = [
 		description: `PettyCash landing page using react`,
 	},
 	{
-		id: 9,
+		id: 13,
 		img: "../images/cake.jpg",
 		name: "Cake For Twitter Desktop",
 		anchor: `https://tolux001.github.io/Cheese-Cake-For-Twitter/#`,
@@ -120,7 +112,7 @@ let items = [
 		description: `Landing Page For Popular Twitter Cheese Cake Website.`,
 	},
 	{
-		id: 10,
+		id: 14,
 		img: "../images/card.jpg",
 		name: "Profile Card",
 		anchor: `https://tolux-dev-profile-card.netlify.app/`,
