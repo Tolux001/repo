@@ -290,7 +290,7 @@ const projectItemFunction = (projects) => {
 			.join("");
 
 		return `
-		<div class="project--card--container" data-index="${index}" ${index === 0 ? 'style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); z-index: 11; background: rgba(14, 239, 255, 0.1); display: block; opacity: 1;"' : "opacity: 0; pointer-events: none;"}>
+		<div class="project--card--container" data-index="${index}" ${index === 0 ? 'style="z-index: 11; background: rgba(14, 239, 255, 0.1); display: block; opacity: 1;"' : ""}>
 			<img src="${item.img}" alt="${item.name}" />
 			<div class="project--info">
 				<h2>${item.name}</h2>
